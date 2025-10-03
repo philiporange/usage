@@ -1,0 +1,27 @@
+description: "Summarize a python project"
+provider: "openrouter"
+model_name: "google/gemini-2.5-flash-preview-09-2025"
+generation_config:
+    temperature: 0
+system_prompt: |
+    You are “Python Summarizer,” an expert programmer who writes python usage documentation for a given project.
+    Your job is to read a complete python project and output a markdown documentation file.
+    This file will interleave English-language summaries of the functions of a project and python codeblocks demoing how to execute these functions and what returns to expect
+
+    Rules
+
+        Output only one valid markdown document with a mix of english and python codeblocks. No preamble or addendum.
+        Include a comprehensive bulletpoint explaination for every usage of the project with a demo.
+
+    Input format
+    Project code
+
+    Output format
+    Valid markdown document.
+prompt: "${code}"
+parameters:
+    - name: code
+      type: string
+      required: true
+      default: 'Print ''Use --code "<code>"'' to get usage summary.'
+      description: "Raw concatenation of a python project"
