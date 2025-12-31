@@ -1,0 +1,63 @@
+{
+  "name": "usage",
+  "short_description": "CLI tool that automatically generates comprehensive usage documentation for Python projects using AI.",
+  "long_description": "Usage is a command-line tool that analyzes Python codebases and automatically generates comprehensive usage documentation using AI. It works by concatenating all Python files in a project, sending them to an AI model (via OpenRouter), and generating well-structured markdown documentation with code examples. The tool supports caching of generated documentation to avoid redundant API calls, and can be run with options to rebuild documentation or print output only. It's designed to help developers quickly create professional usage guides for their Python projects without manual effort.",
+  "keywords": [
+    "documentation-generation",
+    "cli-tool",
+    "python",
+    "ai-powered",
+    "code-analysis",
+    "markdown",
+    "developer-tools",
+    "openrouter",
+    "llm",
+    "automation"
+  ],
+  "primary_language": "Python",
+  "languages": [
+    "Python",
+    "YAML"
+  ],
+  "frameworks": [
+    "catenator",
+    "orac",
+    "python-dotenv"
+  ],
+  "modules": [
+    {
+      "path": "usage/main.py",
+      "description": "Core module providing main function that orchestrates code analysis, AI API calls, and caching of generated documentation to USAGE.md files."
+    },
+    {
+      "path": "usage/cli.py",
+      "description": "Command-line interface module that provides the CLI entry point and argument parsing for the installed package."
+    },
+    {
+      "path": "usage/get_usage.py",
+      "description": "Alternative implementation for generating usage summaries that concatenates project code and sends it to the AI model for documentation generation."
+    },
+    {
+      "path": "usage/__init__.py",
+      "description": "Package initialization module that exports the main function and defines package metadata."
+    },
+    {
+      "path": "usage/prompts/python_summary.yaml",
+      "description": "YAML configuration file defining the AI prompt template for generating Python project documentation using Google Gemini model via OpenRouter."
+    }
+  ],
+  "git": {
+    "is_repo": true,
+    "remote_url": "https://github.com/philiporange/usage.git",
+    "github_name": "philiporange/usage",
+    "default_branch": "master",
+    "last_commit": "2025-10-03T11:45:50+01:00"
+  },
+  "stats": {
+    "files": 11,
+    "lines_of_code": 170,
+    "size_bytes": 20704
+  },
+  "generated_at": "2025-12-06T23:49:07.287819",
+  "generator_version": "1.0.0"
+}
