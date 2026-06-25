@@ -16,8 +16,7 @@
   ],
   "primary_language": "Python",
   "languages": [
-    "Python",
-    "YAML"
+    "Python"
   ],
   "frameworks": [
     "catenator",
@@ -26,38 +25,24 @@
   ],
   "modules": [
     {
-      "path": "usage/main.py",
-      "description": "Core module providing main function that orchestrates code analysis, AI API calls, and caching of generated documentation to USAGE.md files."
+      "path": "usage/cli.py",
+      "description": "Command-line interface entry point that parses arguments and provides the CLI interface for the installed package."
     },
     {
-      "path": "usage/cli.py",
-      "description": "Command-line interface module that provides the CLI entry point and argument parsing for the installed package."
+      "path": "usage/main.py",
+      "description": "Core orchestration module that concatenates project code, calls the AI API via orac, and manages caching to USAGE.md files."
     },
     {
       "path": "usage/get_usage.py",
-      "description": "Alternative implementation for generating usage summaries that concatenates project code and sends it to the AI model for documentation generation."
+      "description": "Alternative implementation for generating usage summaries using catenator and orac for AI-powered documentation."
     },
     {
       "path": "usage/__init__.py",
-      "description": "Package initialization module that exports the main function and defines package metadata."
+      "description": "Package initialization that exports the main function and defines package metadata."
     },
     {
       "path": "usage/prompts/python_summary.yaml",
-      "description": "YAML configuration file defining the AI prompt template for generating Python project documentation using Google Gemini model via OpenRouter."
+      "description": "YAML configuration defining the AI prompt template for generating Python project documentation via Google Gemini model."
     }
-  ],
-  "git": {
-    "is_repo": true,
-    "remote_url": "https://github.com/philiporange/usage.git",
-    "github_name": "philiporange/usage",
-    "default_branch": "master",
-    "last_commit": "2025-10-03T11:45:50+01:00"
-  },
-  "stats": {
-    "files": 11,
-    "lines_of_code": 170,
-    "size_bytes": 20704
-  },
-  "generated_at": "2025-12-06T23:49:07.287819",
-  "generator_version": "1.0.0"
+  ]
 }
